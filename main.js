@@ -124,7 +124,7 @@ function simpleReverse(str) {
 	for(var i = str.length-1; i >= 0; i--) {
 		revstr.push (str[i]); // adding items in reverse order into array
 	}
-	return revstr;
+	return revstr.join('');// join items into array
 }
 //test
 // console.log(simpleReverse('hello'));
