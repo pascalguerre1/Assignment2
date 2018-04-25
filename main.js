@@ -106,9 +106,9 @@ function letterCapitalize(str) {
 	return arr;
 }
 //test
-console.log(letterCapitalize('hello world'));
-console.log(letterCapitalize('you cannot find the answer online'));
-console.log(letterCapitalize('what is your favorite movie'));
+// console.log(letterCapitalize('hello world'));
+// console.log(letterCapitalize('you cannot find the answer online'));
+// console.log(letterCapitalize('what is your favorite movie'));
 // ----------------------------------------------------------
 
 /*6.Write the function simpleReverse(str) taking a string and return the string in reversed order. 
