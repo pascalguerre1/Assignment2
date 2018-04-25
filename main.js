@@ -93,20 +93,22 @@ Hint: There is a built-in function in javaScript that change string into upperca
 There is also function to separate string into an array of characters.*/
 
 function letterCapitalize(str) {
+	var arr = []
 	var str = str.split('')
 	for(var i = 0; i < str.length; i++) {
 		if (i == 0 || str[i-1] == " ") { // if i == 0 then it's the first letter; and i-1 precedes the 1st letter after a space
-			answer = console.log(str[i].toUpperCase());
+			answer = str[i].toUpperCase();
 		} else {
-			answer = console.log(str[i]);
+			answer = str[i];
 		}
+		arr.push(answer);
 	}
-	return answer;
+	return arr;
 }
 //test
-// letterCapitalize('hello world');
-// letterCapitalize('you cannot find the answer online');
-// letterCapitalize('what is your favorite movie');
+console.log(letterCapitalize('hello world'));
+console.log(letterCapitalize('you cannot find the answer online'));
+console.log(letterCapitalize('what is your favorite movie'));
 // ----------------------------------------------------------
 
 /*6.Write the function simpleReverse(str) taking a string and return the string in reversed order. 
