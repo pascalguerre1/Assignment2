@@ -101,9 +101,9 @@ function letterCapitalize(str) {
 		} else {
 			answer = str[i];
 		}
-		arr.push(answer);
+		arr.push(answer);// add items into array
 	}
-	return arr.join('');
+	return arr.join('');// join items into array
 }
 //test
 // console.log(letterCapitalize('hello world'));
