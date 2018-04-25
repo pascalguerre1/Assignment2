@@ -103,7 +103,7 @@ function letterCapitalize(str) {
 		}
 		arr.push(answer);
 	}
-	return arr;
+	return arr.join('');
 }
 //test
 // console.log(letterCapitalize('hello world'));
