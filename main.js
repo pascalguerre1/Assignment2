@@ -354,7 +354,6 @@ function selfDividingNumbers(left, right) {
 //Using 'While' loop
 function selfDividingNumbers(left, right) {
     var selfDiv = []  //create the output array
-
     while (left < right +1) { // do the loop for item between left and right
         var i = 0
         while (i < left.toString().length) {
