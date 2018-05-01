@@ -1,6 +1,7 @@
 /*1. Write the function printInt(n) taking one parameter n and 
 print all natural numbers from 1 to n in console.*/
 
+//Using 'FOR' loop
 function printInt(n){
 	var answer = 0
 	for(var i = 1; i <= n; i++) {
@@ -12,16 +13,42 @@ function printInt(n){
 // printInt(5);
 // printInt(6);
 // printInt(7);
+
+//Using 'While' loop
+function printInt(n){
+	var i = 1
+	while(i <= n) {
+		console.log(i);i++;
+	}
+}
+//test
+// printInt(5);
+// printInt(6);
+// printInt(7);
 // ----------------------------------------------------------
 
 /*2.Write the function printIntRev(n) taking one parameter n 
 and  print all natural numbers in reverse (from n to 1) in console*/
 
+//Using 'FOR' loop
 function printIntRev(n){
 	var answer = n + 1
 	for(var i = n; i > 0; i--) {
 		answer = answer - 1;
 		console.log(answer);
+	}
+}
+//test
+// printIntRev(5);
+// printIntRev(6);
+// printIntRev(7);
+
+//Using 'While' loop
+function printIntRev(n){
+	var i = n
+	while (i > 0) {
+		console.log(i);
+		i--;
 	}
 }
 //test
@@ -40,6 +67,7 @@ E.g. checkInput(5) => ‘number’
        checkInput(none) => -1
 */
 
+//Without 'typeof' attribute
 function checkInput(x) {
 	if (x + 0 === x) {
 		return 'number';
@@ -57,6 +85,26 @@ function checkInput(x) {
 // console.log(checkInput(true));
 // console.log(checkInput(false));
 // console.log(checkInput());
+
+//Using 'typeof' attribute
+function checkInput(x) {
+	if (typeof x == 'number') {
+		return typeof x;
+	} else if (typeof x == 'boolean') {
+		return typeof x;
+	} else if (typeof x == 'string') { 
+		return typeof x;
+	} else {
+		return -1;
+	}
+}
+
+//test
+// console.log(checkInput(5));
+// console.log(checkInput('abc'));
+// console.log(checkInput(true));
+// console.log(checkInput(false));
+// console.log(checkInput());
 // ----------------------------------------------------------
 
 /*4.Write the function simpleEvenAdding(num) taking a number and add up 
@@ -68,10 +116,28 @@ all the even numbers from 1 to num.
            simpleEvenAdding(0) => 0
 */
 
+//Using 'FOR' loop
 function simpleEvenAdding(num) {
 	var answer = 0
 	for (var i = 2; i <= num; i = i+2) {
 		answer = answer + i;
+	}
+	return answer;
+}
+//test
+// console.log(simpleEvenAdding(5));
+// console.log(simpleEvenAdding(10));
+// console.log(simpleEvenAdding(10));
+// console.log(simpleEvenAdding(1));
+// console.log(simpleEvenAdding(0));
+
+//Using 'While' loop
+function simpleEvenAdding(num) {
+	var i = 2
+	var answer = 0
+	while (i <= num) {
+		answer = answer + i;
+		i = i+2;
 	}
 	return answer;
 }
@@ -92,6 +158,7 @@ letterCapitalize(“you cannot find the answer online”) = “You Cannot Find T
 Hint: There is a built-in function in javaScript that change string into uppercase. 
 There is also function to separate string into an array of characters.*/
 
+//Using 'FOR' loop
 function letterCapitalize(str) {
 	var arr = []
 	var str = str.split('')
@@ -109,6 +176,28 @@ function letterCapitalize(str) {
 // console.log(letterCapitalize('hello world'));
 // console.log(letterCapitalize('you cannot find the answer online'));
 // console.log(letterCapitalize('what is your favorite movie'));
+
+//Using 'While' loop
+function letterCapitalize(str) {
+	var arr = []
+	var str = str.split('')
+	var i = 0
+	while (i < str.length) {
+		if (i == 0 || str[i-1] == " ") { // if i == 0 then it's the first letter; and i-1 precedes the 1st letter after a space
+			answer = str[i].toUpperCase();
+		} else {
+			answer = str[i];
+		}
+		arr.push(answer);// add items into array
+		i++;
+	}
+	return arr.join('');// join items into array
+}
+//test
+// console.log(letterCapitalize('hello world'));
+// console.log(letterCapitalize('you cannot find the answer online'));
+// console.log(letterCapitalize('what is your favorite movie'));
+
 // ----------------------------------------------------------
 
 /*6.Write the function simpleReverse(str) taking a string and return the string in reversed order. 
@@ -118,11 +207,27 @@ function letterCapitalize(str) {
 
 Hint: Think of how you can loop through a string or array of characters backwards to produce a new string*/
 
+//Using 'FOR' loop
 function simpleReverse(str) {
 	var str = str.split('')
 	var revstr = [] // created a new array
 	for(var i = str.length-1; i >= 0; i--) {
 		revstr.push (str[i]); // adding items in reverse order into array
+	}
+	return revstr.join('');// join items into array
+}
+//test
+// console.log(simpleReverse('hello'));
+// console.log(simpleReverse('I Love Code'));
+
+//Using 'While' loop
+function simpleReverse(str) {
+	var str = str.split('')
+	var revstr = [] // created a new array
+	i = str.length-1
+	while (i >= 0) {
+		revstr.push (str[i]); // adding items in reverse order into array
+		i--;
 	}
 	return revstr.join('');// join items into array
 }
@@ -222,6 +327,7 @@ Examples:
 	selfDividingNumbers(1, 10) => [1,2,3,4,5,6,7,8,9]
 selfDividingNumbers(12, 21) => [12, 15] */
 
+//Using 'FOR' loop
 function selfDividingNumbers(left, right) {
     var selfDiv = []  //create the output array
     for(left; left < right +1; left++) { // do the loop for item between left and right
@@ -243,6 +349,33 @@ function selfDividingNumbers(left, right) {
 // console.log(selfDividingNumbers(2, 22));
 // console.log(selfDividingNumbers(1, 10));
 // console.log(selfDividingNumbers(12, 21));
+
+//Using 'While' loop
+function selfDividingNumbers(left, right) {
+    var selfDiv = []  //create the output array
+
+    while (left < right +1) { // do the loop for item between left and right
+        var i = 0
+        while (i < left.toString().length) {
+            if(left % left.toString().charAt(i) === 0 && left.toString().charAt(i) !== 0 ) {// conditions for self dividing numbers
+                result = true;
+            }
+            else {
+                result = false;
+                break;
+            }
+            i++;               
+        }
+        if(result == true)
+            selfDiv.push(left);// add the result into the output array
+        left++;
+    } 
+    return selfDiv;
+}
+// test
+// console.log(selfDividingNumbers(2, 22));
+// console.log(selfDividingNumbers(1, 10));
+// console.log(selfDividingNumbers(12, 21));
 // ----------------------------------------------------------
 
 /*Extra Credit:
@@ -254,6 +387,7 @@ moveZeros([1,2,0,0,2,312,33,0,0]=>[1,2,2,312,33,0,0,0,0]
 moveZeros([0,0,0])=>[0,0,0]
 moveZeros([1,2,312,11,2]) => [1,2,312,11,2]*/
 
+//Using 'FOR' loop
 function moveZeros(nums) {
 	var arr = nums.slice();// to make copy of the original array
     //nums array
@@ -267,6 +401,34 @@ function moveZeros(nums) {
         if(arr[i] != 0) {
         	a = arr.splice(i,1); // to remove items != 0 from arr array
         }
+	}
+	newArray = nums.concat(arr); // to combine both arrays
+	return newArray;
+} 
+//test
+// console.log(moveZeros([0,1,0,3,12]));
+// console.log(moveZeros([1,2,0,0,2,312,33,0,0]));
+// console.log(moveZeros([0,0,0]));
+// console.log(moveZeros([1,2,312,11,2]));
+
+//Using 'While' loop
+function moveZeros(nums) {
+	var arr = nums.slice();// to make copy of the original array
+    //nums array
+    var i = nums.length
+    while (i >= 0) {
+        if(nums[i] == 0) {
+        	a = nums.splice(i,1); // to remove 0 item from nums array
+         }
+         i--;
+	}
+	//arr array
+	var i = arr.length
+	while (i >= 0) {
+        if(arr[i] != 0) {
+        	a = arr.splice(i,1); // to remove items != 0 from arr array
+        }
+        i--;
 	}
 	newArray = nums.concat(arr); // to combine both arrays
 	return newArray;

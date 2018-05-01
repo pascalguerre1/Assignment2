@@ -1,0 +1,23 @@
+body{padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    position: absolute;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    text-shadow: 8px 8px 16px black;
+    font-size: 60px;
+}
+/*"move" is matching the animation-name in h3*/
+@keyframes move {
+    0% {color: red; left: 0px; top: 0px;}
+    20% {color: blue; left: 0px; top: 600px;transform: rotateY(130deg);}
+    40% {color: red; left: 500px; top: 0px;}
+    50% {color: blue; left: 500px; top: 0px;transform: rotateY(360deg);}
+    75% {color: red; left: 0px; top: 600px;}
+    90% {color: blue; left: 500px; top: 0px;transform: rotateY(130deg);}
+    100% {color: red; left: 0px; top: 0px;}
